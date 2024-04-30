@@ -5,12 +5,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="px-6 py-4 text-white bg-zinc-950 flex items-center justify-between">
+      <h1 class="text-lg font-semibold">Twitter</h1>
+
+      <div class="flex flex-row gap-4 font-semibold">
+        <% if current_user %>
+        <%= link_to "Update Profile", edit_user_registration_path, class: "ring-2 text-blue-500 px-2 py-1 hover:bg-blue-500 hover:text-white" %>
+          <%= link_to "Log Out", destroy_user_session_path, 'data-turbo-method': :delete, class: "ring-2 ring-red-500 text-red-500 px-2 py-1 hover:bg-red-500 hover:text-white" %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class: "ring-2 text-blue-500 px-2 py-1 hover:bg-blue-500 hover:text-white" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "ring-2 text-blue-500 px-2 py-1 hover:bg-blue-500 hover:text-white" %>
+        <% end %>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-5 flex">
+      <%= yield %>
+    </main>
   </body>
 </html>
