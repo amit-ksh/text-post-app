@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true,
             format: { with: /\A[\w\-]+\z/, message: "can only contain letters, numbers, underscores, and dashes" }
+  has_many  :tweets
 end

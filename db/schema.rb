@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_30_081441) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_30_090524) do
+  create_table "tweets", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tweets_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -25,4 +33,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_081441) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "tweets", "users"
 end
