@@ -1,24 +1,25 @@
-# README
+# text-post app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Demo:
 
-Things you may want to cover:
+text-post app: https://youtu.be/NzhMn7yCeF8
 
-* Ruby version
+Matrix Multiplication: https://youtu.be/cQrbbarKskM
 
-* System dependencies
+## Local Setup
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone the repo and dependencies
+   ```bash
+   git clone https://github.com/amit-ksh/twitter-clone.git
+   cd twitter-clone
+   bundle install
+   ```
+2. Create database tables: `rails db:migrate`
+3. Create `.env` file and following variables
+   ```bash
+    CLOUDINARY_CLOUD_NAME="cloud_name"
+    CLOUDINARY_API_KEY="api_key"
+    CLOUDINARY_API_SECRET="api_secret"
+   ```
+4. Start the server: `rails server`
+5. (Optional) Run `rails tailwindcss:watch` to load the CSS classes page update
