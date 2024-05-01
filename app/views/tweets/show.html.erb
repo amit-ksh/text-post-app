@@ -1,10 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="my-6 flex flex-col gap-4 justify-center items-center w-full">
 
-<%= render @tweet %>
+  <p style="color: green"><%= notice %></p>
 
-<div>
-  <%= link_to "Edit this tweet", edit_tweet_path(@tweet) %> |
-  <%= link_to "Back to tweets", tweets_path %>
+  <%= render @tweet %>
 
-  <%= button_to "Destroy this tweet", @tweet, method: :delete %>
+  <% if current_user == @tweet.user %>
+    <div class="text-blue-500 flex flex-col gap-4">
+      <div>
+        <%= link_to "Edit this tweet", edit_tweet_path(@tweet) %> <span class="text-zinc-400">|</span>
+        <%= link_to "Back to tweets", tweets_path %>
+      </div>
+      <%= button_to "Destroy this tweet", @tweet, method: :delete, class: 'text-red-500' %>
+    </div>
+  <% end %>
 </div>

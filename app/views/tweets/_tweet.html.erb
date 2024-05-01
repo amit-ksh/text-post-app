@@ -1,12 +1,10 @@
-<div id="<%= dom_id tweet %>">
-  <p>
-    <strong>User:</strong>
-    <%= tweet.user_id %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
+<div id="<%= dom_id tweet %>", class="p-4 border border-zinc-950/40 rounded w-full">
+  <p class="text-lg">
     <%= tweet.content %>
   </p>
+  <p class="text-sm">
+    @<%= tweet.user['username'] %>
+  </p>
+  <%= link_to "Open", tweet, class: 'text-blue-500' %>
 
 </div>
