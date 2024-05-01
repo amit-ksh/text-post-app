@@ -12,7 +12,7 @@ Code: https://codepen.io/amit-ksh/pen/poBmROJ
 
 1. Clone the repo and dependencies
    ```bash
-   git clone https://github.com/amit-ksh/twitter-clone.git
+   git clone https://github.com/amit-ksh/text-post-app.git
    cd twitter-clone
    bundle install
    ```
