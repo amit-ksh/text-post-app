@@ -1,10 +1,20 @@
+<% my_tweet = @tweet || tweet %>
+
 <div id="<%= dom_id tweet %>", class="p-4 border border-zinc-950/40 rounded w-full">
-  <p class="text-lg">
-    <%= tweet.content %>
-  </p>
-  <p class="text-sm">
+  <p class="text-lg font-bold border-b mb-2">
     @<%= tweet.user['username'] %>
   </p>
-  <%= link_to "Open", tweet, class: 'text-blue-500' %>
 
+  <p class="text-xl">
+    <%= tweet.content %>
+  </p>
+
+    <div class="flex flex-wrap -mx-2">
+      <% my_tweet.medias.each do |media| %>
+        <div class="w-1/2 sm:w-1/3 px-2 mb-2">
+          <%= cl_image_tag(media.key, class: "rounded w-full h-auto") %>
+        </div>
+      <% end %>
+    </div>
+  <%= link_to "Open", tweet, class: 'text-blue-500' %>
 </div>

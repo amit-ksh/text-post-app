@@ -11,12 +11,19 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :content, class: 'block font-semibold' %>
-    <%= form.text_area :content %>
+  <div class='flex flex-col gap-4'>
+    <div>
+      <%= form.label :content, class: 'block font-semibold' %>
+      <%= form.text_area :content %>
+    </div>
+
+    <div>
+      <%= form.label :medias, "Media", class: 'block font-semibold' %>
+      <%= form.file_field :medias, accept: "image/*,video/*" %>
+    </div>
   </div>
 
-  <div>
+  <div class="mt-4">
     <%= form.submit "Update", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
   </div>
 <% end %>

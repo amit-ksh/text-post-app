@@ -69,3 +69,7 @@ end
 gem "devise", "~> 4.9"
 
 gem "tailwindcss-rails", "~> 2.5"
+
+gem "dotenv", "~> 3.1"
+
+gem "cloudinary", "~> 2.0"
